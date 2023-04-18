@@ -16,7 +16,8 @@ namespace Reflection267Batch
             Console.WriteLine("\n1:finding nearest number" +
                 "\n2:FetchingClass,Methods using Reflection" +
                 "\n3:Creating Empty Object Using Reflection" +
-                "\n4:Creating Parametrized Object Using Reflection \n22:Default");
+                "\n4:Creating Parametrized Object Using Reflection" +
+                "\n5:Invoke the method using Reflection \n22:Default");
             int choose = Convert.ToInt32(Console.ReadLine());
             switch (choose)
             {
@@ -50,7 +51,13 @@ namespace Reflection267Batch
                     object obj2 = constructor.Invoke(new object[] { "Raji" });
                     Console.WriteLine(obj2.GetType().Name); 
                     break;
-
+                case 5:
+                    Type type3 = typeof(Reflection);
+                    MethodInfo method = type3.GetMethod("GetClosestEvenNumber");
+                    object[] parameters = new object[] { 23 };
+                    int result = (int)method.Invoke(null, parameters);
+                    Console.WriteLine("Result: " + result);
+                    break;
             }
             Console.ReadLine(); 
         }
