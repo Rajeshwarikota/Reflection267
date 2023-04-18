@@ -13,7 +13,10 @@ namespace Reflection267Batch
         {
             Console.WriteLine("....REFLECTION....");
             Console.WriteLine("Choose the Below Options");
-            Console.WriteLine("\n1:finding nearest number\n2:FetchingClass,Methods using Reflection\n3:CreatingEmptyObjectUsingReflection\n22:Default");
+            Console.WriteLine("\n1:finding nearest number" +
+                "\n2:FetchingClass,Methods using Reflection" +
+                "\n3:Creating Empty Object Using Reflection" +
+                "\n4:Creating Parametrized Object Using Reflection \n22:Default");
             int choose = Convert.ToInt32(Console.ReadLine());
             switch (choose)
             {
@@ -40,6 +43,12 @@ namespace Reflection267Batch
                         object obj = Activator.CreateInstance(type1);
                         Console.WriteLine(obj.GetType().Name);
                     }
+                    break;
+                case 4:
+                    Type type2 = typeof(Reflection);
+                    ConstructorInfo constructor = type2.GetConstructor(new Type[] { typeof(string) });
+                    object obj2 = constructor.Invoke(new object[] { "Raji" });
+                    Console.WriteLine(obj2.GetType().Name); 
                     break;
 
             }

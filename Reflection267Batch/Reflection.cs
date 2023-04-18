@@ -8,10 +8,17 @@ namespace Reflection267Batch
 {
     public class Reflection
     {
+        public string Name { get; set; }
         public Reflection()
         {
             Console.WriteLine("Default Constructor Invoke");
         }
+        public Reflection(string name)
+        {
+            Name = name;
+            Console.WriteLine("In parameterized Constructor and given Parameter is " + Name);
+        }
+
         public static int GetClosestEvenNumber(int n)
         {
             int absN = Math.Abs(n);
