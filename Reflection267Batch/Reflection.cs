@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Reflection267Batch
 {
-    class Reflection
+    public class Reflection
     {
         public static int GetClosestEvenNumber(int n)
         {
